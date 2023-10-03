@@ -44,8 +44,8 @@ Test Flight reservation list
 
     
     #8.Check that you have at least one flight choice visible
-    @{flights}=  Get WebElements    xpath: /html/body/div[2]/table
-    Should Not Be Empty     ${flights}
+    ${flights}=  SeleniumLibrary.Get Element Count    xpath: /html/body/div[2]/table
+    Should Be True     ${flights} > 0
 
     
     #9. Select one of the flights -> store the price, number and airline of that flight in separate variables
