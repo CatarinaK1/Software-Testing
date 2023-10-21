@@ -1,0 +1,170 @@
+
+INSERT INTO student (studentnbr, firstname, lastname, birthdate, address, zipcode, zipaddress, gender)
+VALUES('o148','Sanna','Rentukka','1990-10-22','Puronvarsi 662 F','00630','Helsinki','N');
+
+INSERT INTO student 
+VALUES('o210','Kaarlo','Kuikka','1985-08-31','Huilupolku 58 C 2','00420','Helsinki','M');
+
+INSERT INTO student 
+VALUES('o298','Raimo','Veto','1992-12-01','Ketjukuja 196 A 81','00680','Helsinki','M');
+
+INSERT INTO student 
+VALUES('o348','Kaarina','Kaki','1990-04-03','Aimakuja 79','01260','Vantaa','N');
+
+INSERT INTO student 
+VALUES('o349','Johan','Bompas','1991-05-17','Ovre-Gumminkuja 115','01590','Maisala','M');
+
+INSERT INTO student
+VALUES('o354','Usko','Housu','1986-10-20','Toivola 100','01800','Klaukkala','M');
+
+INSERT INTO student
+ VALUES('o410','Leena','Liima','1984-03-03','Nysatie 44 G','02880','Veikkola','N');
+
+INSERT INTO student 
+VALUES('o473','Fredrik','Leipa','1991-11-22','Haukas 20 A 20','02400','Kyrkslatt','M');
+
+INSERT INTO student VALUES(
+'o548','Valma','Vispila','1989-10-10','Jaspilankatu 22','04200','Kerava','N');
+
+INSERT INTO student 
+VALUES('o558','Greta','Hullerus','1982-03-28','Havs-hanikka 800 A','02360','Esbo','N');
+
+INSERT INTO student 
+VALUES('o649','Martti','Katti','1992-03-28','Siamintie 66 B 1','00560','Helsinki','M');
+
+INSERT INTO student 
+VALUES('o654','Rosina','Laine','1983-05-07','Liplatus 55 D', '02320', 'Espoo','N');
+
+INSERT INTO student 
+VALUES('o699','Vaino','Veto','1981-03-21','Ketjukuja 16 C 16', '00680', 'Helsinki','M');
+
+INSERT INTO student 
+VALUES('o707','Laina','Laihia','1966-05-22','Penninpyorittajankuja 33', '00750', 'Helsinki','N');
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h303', 'Veli','Torvi', '1979-07-25', '050-123456', 3720.00 );
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h290', 'Sisko','Sarvi','1965-11-01', '040-776655',  3725.00 );
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h430', 'Emma','Enkeli','1969-04-18', '050-333455',  4100.00 );
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h180', 'Seppo','Kokki','1960-02-03', '040-808800',  3780.00 );
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h560', 'Olka','Tanko', '1965-05-30', '040-666977',  4599.00 );
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h784','Vieno','Valssi','1979-09-12', '050-223749',  4049.00 );
+ 
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h786','Hertta','Humina','1974-09-12', '040-203549',  4049.00 );
+
+INSERT INTO lecturer (lecturernbr,firstname,lastname,birthdate,phone,salary) 
+ VALUES('h888','Heimo','Humppa','1981-09-26', '040-567890',  4343.00 );
+
+INSERT INTO module (modulenbr,name,responsible_lecturer,credits)
+ VALUES('a450', 'Muokkaimet ja kylvimet', 'h430', 3);
+
+INSERT INTO module 
+VALUES('a730', 'Laskento ja laulanto', 'h290', 4);
+
+INSERT INTO module 
+VALUES('a290', 'Kielen taivuttelu', 'h430', 2);
+
+INSERT INTO module VALUES(
+'a480', 'Tieto kantohinnoista', 'h784', 3);
+
+INSERT INTO module VALUES(
+'a760', 'Hongikon hoito', 'h786', 3);
+
+INSERT INTO module VALUES(
+'a820', 'Kauhat ja kattilat', 'h180', 2);
+
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a450', 1,'2011-01-03','2011-02-25','h303',2);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a730', 1,'2012-03-15','2012-05-30','h290',6);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a290', 1,'2011-08-01','2011-09-15','h430',4);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a480', 1,'2012-02-10','2012-04-22','h180',3);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a450', 2,'2011-12-01','2012-03-10','h560',2);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a480', 2,'2012-03-15','2012-05-30','h784',2);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr)
+ VALUES('a290', 2,'2011-11-01',NULL,NULL);
+
+INSERT INTO theme (modulenbr,implementationnbr,startdate,enddate,lecturernbr,studentcount)
+ VALUES('a760', 1,'2012-06-15','2012-08-15','h786',4);
+
+
+INSERT INTO record (studentnbr,modulenbr,implementationnbr,recorddate,grade,lecturernbr)
+ VALUES('o148','a730', 1,'2012-06-01',3,'h290');
+
+INSERT INTO record 
+VALUES('o210','a450', 2,'2012-03-12',3,'h303');
+
+INSERT INTO record 
+VALUES('o210','a730', 1,'2012-06-05',1,'h290');
+
+INSERT INTO record 
+VALUES('o298','a290', 1,'2011-09-16',3,'h430');
+
+INSERT INTO record 
+VALUES('o298','a480', 2,'2012-04-05',3,'h784');
+
+INSERT INTO record 
+VALUES('o348','a730', 1,'2012-06-07',4,'h290');
+
+INSERT INTO record 
+VALUES('o349','a290', 1,'2011-09-11',4,'h430');
+
+INSERT INTO record 
+VALUES('o354','a480', 1,'2012-03-22',4,'h784');
+
+INSERT INTO record
+ VALUES('o410','a290', 1,'2011-09-15',2,'h180');
+
+INSERT INTO record 
+VALUES('o410','a730', 1,'2012-06-01',3,'h290');
+
+INSERT INTO record 
+VALUES('o473','a450', 1,'2012-03-14',2,'h303');
+
+INSERT INTO record 
+VALUES('o473','a480', 2,'2012-06-04',0,'h784');
+
+INSERT INTO record 
+VALUES('o473','a730', 1,'2012-06-10',3,'h290');
+
+INSERT INTO record
+ VALUES('o548','a290', 1,'2012-09-20',2,'h430');
+
+INSERT INTO record 
+VALUES('o548','a450', 2,NULL,NULL,NULL);
+
+INSERT INTO record 
+VALUES('o649','a730', 1,'2012-06-02',4,'h290');
+
+INSERT INTO record 
+VALUES('o649','a480', 1,'2012-05-03',4,'h180');
+
+INSERT INTO record 
+VALUES('o649','a760', 1,'2012-08-18',2,'h180');
+
+INSERT INTO record 
+VALUES('o654','a450', 1,'2012-03-18',4,'h303');
+
+INSERT INTO record 
+VALUES('o707','a760', 1,'2012-08-18',3,'h180');

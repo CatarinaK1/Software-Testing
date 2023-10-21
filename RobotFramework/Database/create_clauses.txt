@@ -1,0 +1,61 @@
+CREATE TABLE student
+( studentnbr 		CHAR(4)  NOT NULL,
+  firstname         VARCHAR(20) NOT NULL,
+  lastname          VARCHAR(40) NOT NULL,
+  birthdate         DATE,
+  address        	VARCHAR(40),
+  zipcode          	CHAR(5),
+  zipaddress        VARCHAR(30),
+  gender         	CHAR(1) NOT NULL,
+  PRIMARY KEY  (studentnbr )
+ );
+ 
+CREATE TABLE lecturer
+( lecturernbr       CHAR(4)  NOT NULL,
+  firstname         VARCHAR(20) NOT NULL,
+  lastname          VARCHAR(40) NOT NULL,
+  salary            DECIMAL(6,2) NOT NULL,
+  phone           	CHAR(10),
+  birthdate         DATE,
+  PRIMARY KEY  (lecturernbr) 
+ );
+
+CREATE TABLE module
+( modulenbr         	CHAR(4)  NOT NULL,
+  name              	VARCHAR(30) NOT NULL,
+  responsible_lecturer CHAR(4),
+  credits   			SMALLINT,
+  PRIMARY KEY (modulenbr),
+  FOREIGN KEY (responsible_lecturer)
+                REFERENCES lecturer (lecturernbr)		
+ );
+
+CREATE TABLE theme
+(modulenbr         	CHAR(4)  NOT NULL,
+  implementationnbr SMALLINT NOT NULL,
+  lecturernbr      	CHAR(4),
+  studentcount    	SMALLINT ,
+  startdate         DATE,
+  enddate          	DATE,
+  CHECK (enddate >= startdate),
+  PRIMARY KEY (modulenbr , implementationnbr),
+  FOREIGN KEY (modulenbr)
+                REFERENCES module (modulenbr),
+  FOREIGN KEY (lecturernbr)
+                REFERENCES lecturer (lecturernbr)
+ );		
+	
+CREATE TABLE record
+( studentnbr        CHAR(4)  NOT NULL,
+  modulenbr         CHAR(4)  NOT NULL,
+  implementationnbr SMALLINT NOT NULL,
+  recorddate        DATE,  
+  grade          	SMALLINT CHECK ((grade BETWEEN 0 AND 5)
+                                   OR (grade IS NULL)),
+  lecturernbr       CHAR(4),
+  PRIMARY KEY (studentnbr, modulenbr, implementationnbr),
+  FOREIGN KEY (studentnbr)
+                REFERENCES student (studentnbr),
+  FOREIGN KEY (modulenbr, implementationnbr)
+                REFERENCES theme (modulenbr, implementationnbr)
+ );	
