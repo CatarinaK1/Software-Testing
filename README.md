@@ -21,6 +21,8 @@ pip install robotframework
 
 ```
 pip install –U robotframework-databaselibrary
+```
+```
 pip install pymysql
 ```
 
@@ -29,6 +31,8 @@ Running this command installs the latest Selenium and Robot Framework versions, 
 
 ```
 pip install --upgrade robotframework-seleniumlibrary
+```
+```
 pip install webdrivermanager
 ```
 
