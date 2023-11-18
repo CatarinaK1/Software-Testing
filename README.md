@@ -46,8 +46,12 @@ You can also use the tool called WebdriverManager which finds the latest version
 
 ```
 pip install webdrivermanager
-webdrivermanager chrome --linkpath /usr/local/bin
-#Or
-webdrivermanager chrome
 ```
+```
+webdrivermanager chrome --linkpath /usr/local/bin
+```  
+#### Or
+```
+webdrivermanager chrome
+```  
   
